@@ -1,0 +1,71 @@
+<style>
+  .site-title {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .site-title-part {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-right: 0.08em solid transparent;
+    box-sizing: content-box;
+  }
+
+  .site-title-part-1 {
+    margin-right: 0.3ch;
+    animation:
+      type-hazuli 0.8s steps(6, end) 0.15s forwards,
+      caret-hide 0s linear 1.1s forwards;
+  }
+
+  .site-title-part-2 {
+    animation:
+      type-fidastian 1s steps(9, end) 1.45s forwards,
+      caret-blink 1.1s steps(1, end) 1.45s 2,
+      caret-blink 1.1s steps(1, end) 2.45s infinite;
+  }
+
+  @keyframes type-hazuli {
+    from {
+      max-width: 0;
+      border-right-color: currentColor;
+    }
+
+    to {
+      max-width: 6.5ch;
+      border-right-color: currentColor;
+    }
+  }
+
+  @keyframes type-fidastian {
+    from {
+      max-width: 0;
+      border-right-color: currentColor;
+    }
+
+    to {
+      max-width: 9.5ch;
+      border-right-color: currentColor;
+    }
+  }
+
+  @keyframes caret-blink {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes caret-hide {
+    to {
+      border-right-color: transparent;
+    }
+  }
+</style>
+
+<h1 class="site-title" aria-label="Hazuli Fidastian">
+  <span class="site-title-part site-title-part-1">Hazuli</span>
+  <span class="site-title-part site-title-part-2">Fidastian</span>
+</h1>

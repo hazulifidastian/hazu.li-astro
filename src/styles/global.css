@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #111827;
+  background-color: #f2f0e3;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-nav {
+  font-family: "Nunito", sans-serif;
+}
+
+.site-header {
+  margin-bottom: 2rem;
+}
+
+.site-header .decor {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.site-header .decor div {
+  flex: 1;
+  height: 0.75rem;
+}
+
+.site-header .decor div:nth-child(2) {
+  background-color: #111827;
+}
+
+.site-header .decor div:nth-child(1) {
+  background-color: #f76f53;
+}
+
+.site-nav {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.site-nav .site-nav-main a {
+  margin-right: 0.6rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+}
+
+.site-footer .decor {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.site-footer .decor div {
+  flex: 1;
+  height: 0.75rem;
+}
+
+.site-footer .decor div:nth-child(2) {
+  background-color: #111827;
+}
+
+.site-footer .decor div:nth-child(3) {
+  background-color: #f76f53;
+}
+
+section {
+  margin-right: 1.125rem;
+  margin-left: 1.125rem;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .site-header .decor,
+  .site-footer .decor {
+    width: 576px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  section {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

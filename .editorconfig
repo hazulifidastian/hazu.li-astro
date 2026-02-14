@@ -1,0 +1,51 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Astro/HTML files
+[*.{astro,html,htm}]
+indent_style = space
+indent_size = 2
+
+# JavaScript/TypeScript files
+[*.{js,jsx,mjs,cjs,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+# CSS/SCSS files
+[*.{css,scss,sass,less}]
+indent_style = space
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Makefile
+[Makefile]
+indent_style = tab
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2

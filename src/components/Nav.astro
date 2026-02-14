@@ -1,0 +1,40 @@
+---
+import { getAlternateLocalePath } from "@lib/routeMaps";
+
+const lang = Astro.currentLocale;
+const isEnglish = lang === "en";
+const projectsHref = isEnglish ? "/en/projects" : "/proyek";
+const projectsLabel = isEnglish ? "Projects" : "Proyek";
+const homeHref = isEnglish ? "/en" : "/";
+const homeLabel = isEnglish ? "Home" : "Beranda";
+const contactHref = isEnglish ? "/en/contact" : "/kontak";
+const contactLabel = isEnglish ? "Contact" : "Kontak";
+
+const currentPath = Astro.url.pathname;
+const idHref = getAlternateLocalePath(currentPath, "id");
+const enHref = getAlternateLocalePath(currentPath, "en");
+---
+
+<style>
+  .site-nav {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  .site-nav .site-nav-main a {
+    margin-right: 0.6rem;
+  }
+</style>
+
+<nav class="site-nav" aria-label={isEnglish ? "Secondary" : "Sekunder"}>
+  <div class="site-nav-main">
+    <a href={homeHref}>{homeLabel}</a>
+    <a href={projectsHref}>{projectsLabel}</a>
+    <a href={contactHref}>{contactLabel}</a>
+  </div>
+  <div class="site-nav-locale">
+    <a href={idHref}>ID</a>
+    <span>|</span>
+    <a href={enHref}>EN</a>
+  </div>
+</nav>

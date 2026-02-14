@@ -1,0 +1,14 @@
+---
+const encodedMailto = "bWFpbHRvOm1haWxAaGF6dS5saQ==";
+---
+
+<a id="ct-link" href="#">email</a>
+
+<script define:vars={{ encodedMailto }}>
+  const contactLink = document.getElementById("ct-link");
+
+  contactLink?.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = atob(encodedMailto);
+  });
+</script>
