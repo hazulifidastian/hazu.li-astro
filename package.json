@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@knadh/oat": "^0.2.0",
     "astro": "^5.17.1"
   }
 }
