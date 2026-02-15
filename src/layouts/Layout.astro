@@ -5,28 +5,28 @@ import "../styles/global.css";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="generator" content={Astro.generator} />
-        <!-- <link rel="stylesheet" href="/assets/oat/oat.min.css" /> -->
-        <!-- <script src="/assets/oat/oat.min.js" defer></script> -->
-        <title>hazu.li</title>
-    </head>
-    <body>
-        <slot />
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svc" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- <link rel="stylesheet" href="/assets/oat/oat.min.css" /> -->
+    <!-- <script src="/assets/oat/oat.min.js" defer></script> -->
+    <title>hazu.li</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global></style>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-    }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
