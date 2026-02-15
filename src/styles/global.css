@@ -15,11 +15,6 @@
   --spacing-xl: 2rem;
 }
 
-html {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-}
-
 .container {
   margin: 0 auto;
   padding-left: var(--spacing-sm);
