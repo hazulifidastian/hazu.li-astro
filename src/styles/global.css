@@ -1,31 +1,36 @@
 :root {
-    /* Breakpoints
+  /* Breakpoints
      * Ini hanya sebagai penanda
     */
-    --breakpoint-sm: 640px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1280px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .container {
-    margin: 0 auto;
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
+  margin: 0 auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
 }
 
 /* --breakpoint-md */
 @media (min-width: 768px) {
-    .container {
-        max-width: 700px;
-        padding-left: var(--spacing-sm);
-        padding-right: var(--spacing-sm);
-    }
+  .container {
+    max-width: 700px;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
 }
