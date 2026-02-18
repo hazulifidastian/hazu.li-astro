@@ -1,3 +1,5 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,401,700,701&display=swap");
+
 :root {
   /* Breakpoints
      * Ini hanya sebagai penanda
@@ -13,6 +15,14 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+  --font-sans: "General Sans", sans-serif;
+}
+
+html {
+  font-feature-settings:
+    "liga" 1,
+    "kern" 1;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
