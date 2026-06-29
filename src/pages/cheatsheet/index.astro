@@ -1,0 +1,37 @@
+---
+import CheatsheetLayout from "@layouts/CheatsheetLayout.astro";
+import type { MarkdownInstance } from "astro";
+
+type Frontmatter = {
+  title?: string;
+};
+
+const cheatsheets = Object.values(
+  import.meta.glob<MarkdownInstance<Frontmatter>>("./*.md", { eager: true }),
+);
+
+const entries = cheatsheets
+  .map((cheatsheet) => ({
+    href: cheatsheet.url ?? "/cheatsheet",
+    label: cheatsheet.frontmatter.title ?? "Untitled",
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
+---
+
+<CheatsheetLayout>
+  <section>
+    <h2>Cheatsheet</h2>
+
+    {
+      entries.length > 0 ? (
+        <ul>
+          {entries.map((entry) => (
+            <li><a href={entry.href}>{entry.label}</a></li>
+          ))}
+        </ul>
+      ) : (
+        <p>Belum ada cheatsheet.</p>
+      )
+    }
+  </section>
+</CheatsheetLayout>

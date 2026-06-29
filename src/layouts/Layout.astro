@@ -3,6 +3,7 @@ import "@styles/global.css";
 import Nav from "@components/Nav.astro";
 import SiteTitle from "@components/SiteTitle.astro";
 import Decor from "@components/Decor.astro";
+import FooterNav from "@components/FooterNav.astro";
 
 const lang = Astro.currentLocale;
 const isEnglish = lang === "en";
@@ -22,8 +23,8 @@ const description = isEnglish
   </head>
   <body>
     <header class="site-header">
-      <Decor />
-      <div class="container">
+      <Decor position="site-header" />
+      <div class="container-sm">
         <section>
           <SiteTitle />
           <Nav />
@@ -34,12 +35,14 @@ const description = isEnglish
     <slot />
 
     <footer class="site-footer">
-      <div class="container">
+      <div class="container-sm">
         <section>
-          <p>&copy; 2026 Hazuli Fidastian</p>
+          <hr />
+          <FooterNav />
+          <p class="copyright">&copy; 2026 Hazuli Fidastian</p>
         </section>
       </div>
-      <Decor />
+      <Decor position="site-footer" />
     </footer>
   </body>
 </html>

@@ -1,14 +1,29 @@
----
-const encodedMailto = "bWFpbHRvOm1haWxAaGF6dS5saQ==";
----
+<a href="#" data-mail-link>email</a>
 
-<a id="ct-link" href="#">email</a>
+<script>
+  const anchor = document.currentScript?.previousElementSibling;
 
-<script define:vars={{ encodedMailto }}>
-  const contactLink = document.getElementById("ct-link");
+  if (anchor instanceof HTMLAnchorElement) {
+    const parts = [
+      [109, 97, 105, 108],
+      [104, 97, 122, 117, 46, 108, 105],
+    ];
+    const decode = (codes) => String.fromCharCode(...codes);
+    const href = `mailto:${decode(parts[0])}@${decode(parts[1])}`;
 
-  contactLink?.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.location.href = atob(encodedMailto);
-  });
+    const activate = () => {
+      anchor.href = href;
+    };
+
+    anchor.addEventListener(
+      "click",
+      (event) => {
+        event.preventDefault();
+        window.location.href = href;
+      },
+      { passive: false },
+    );
+    anchor.addEventListener("focus", activate, { once: true });
+    anchor.addEventListener("mouseenter", activate, { once: true });
+  }
 </script>

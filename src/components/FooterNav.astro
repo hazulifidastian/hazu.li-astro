@@ -1,0 +1,27 @@
+---
+import { getAlternateLocalePath } from "@lib/routeMaps";
+
+const lang = Astro.currentLocale;
+const isEnglish = lang === "en";
+const cheatsheetHref = isEnglish ? "/cheatsheet" : "/cheatsheet";
+const cheatsheetLabel = isEnglish ? "Cheatsheets" : "Cheatsheet";
+
+const currentPath = Astro.url.pathname;
+const idHref = getAlternateLocalePath(currentPath, "id");
+const enHref = getAlternateLocalePath(currentPath, "en");
+---
+
+<style>
+  .footer-nav {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  .footer-nav a {
+    margin-right: 0.6rem;
+  }
+</style>
+
+<nav class="footer-nav" aria-label={isEnglish ? "Secondary" : "Sekunder"}>
+  <a href={cheatsheetHref}>{cheatsheetLabel}</a>
+</nav>
