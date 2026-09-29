@@ -13,28 +13,18 @@ const contactLabel = isEnglish ? "Contact" : "Kontak";
 const currentPath = Astro.url.pathname;
 const idHref = getAlternateLocalePath(currentPath, "id");
 const enHref = getAlternateLocalePath(currentPath, "en");
+const activePath = currentPath.replace(/\/$/, "") || "/";
 ---
-
-<style>
-  .site-nav {
-    display: flex;
-    margin-bottom: 2rem;
-  }
-
-  .site-nav .site-nav-main a {
-    margin-right: 0.6rem;
-  }
-</style>
 
 <nav class="site-nav" aria-label={isEnglish ? "Primary" : "Primer"}>
   <div class="site-nav-main">
-    <a href={homeHref}>{homeLabel}</a>
-    <a href={projectsHref}>{projectsLabel}</a>
-    <a href={contactHref}>{contactLabel}</a>
+    <a href={homeHref} aria-current={activePath === homeHref ? "page" : undefined}>{homeLabel}</a>
+    <a href={projectsHref} aria-current={activePath === projectsHref ? "page" : undefined}>{projectsLabel}</a>
+    <a href={contactHref} aria-current={activePath === contactHref ? "page" : undefined}>{contactLabel}</a>
   </div>
   <div class="site-nav-locale">
-    <a href={idHref}>ID</a>
-    <span>|</span>
-    <a href={enHref}>EN</a>
+    <a href={idHref} lang="id" hreflang="id" aria-current={!isEnglish ? "true" : undefined}>ID</a>
+    <span aria-hidden="true">|</span>
+    <a href={enHref} lang="en" hreflang="en" aria-current={isEnglish ? "true" : undefined}>EN</a>
   </div>
 </nav>

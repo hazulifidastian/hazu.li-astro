@@ -2,8 +2,6 @@
 import "@styles/global.css";
 import Nav from "@components/Nav.astro";
 import SiteTitle from "@components/SiteTitle.astro";
-import Decor from "@components/Decor.astro";
-import FooterNav from "@components/FooterNav.astro";
 
 const lang = Astro.currentLocale;
 const isEnglish = lang === "en";
@@ -23,12 +21,9 @@ const description = isEnglish
   </head>
   <body>
     <header class="site-header">
-      <Decor position="site-header" />
-      <div class="container-sm">
-        <section>
-          <SiteTitle />
-          <Nav />
-        </section>
+      <div class="container-sm site-header-inner">
+        <SiteTitle />
+        <Nav />
       </div>
     </header>
 
@@ -40,7 +35,6 @@ const description = isEnglish
           <p class="copyright">&copy; 2026 Hazuli Fidastian</p>
         </section>
       </div>
-      <Decor position="site-footer" />
     </footer>
   </body>
 </html>

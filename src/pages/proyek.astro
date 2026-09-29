@@ -1,43 +1,56 @@
 ---
+import { Image } from "astro:assets";
+import learningCardsImage from "../assets/projects/learning-cards.png";
+import upmonImage from "../assets/projects/upmon.png";
 import PageLayout from "@layouts/PageLayout.astro";
 ---
 
 <PageLayout>
   <section>
-    <h2>Proyek</h2>
+    <h1>Proyek</h1>
     <p>
-      Ini adalah kumpulan aplikasi publik yang saya kembangkan secara personal.
+      Beberapa aplikasi publik yang saya kembangkan sebagai proyek personal.
     </p>
 
     <ul>
       <li>
         <a target="_blank" href="https://learningcards.hazu.li"
           >Learning Cards &#8599;</a
-        ><br />
+        >
+        <Image
+          class="project-image"
+          src={learningCardsImage}
+          alt="Tampilan halaman utama Learning Cards"
+          width={960}
+        />
         <p>
-          Ini adalah aplikasi kartu flash digital yang menggunakan metode
-          pengulangan berjarak atau <i>spaced repetition</i>.
+          Aplikasi kartu flash digital yang menggunakan metode pengulangan
+          berjarak atau <i>spaced repetition</i>.
         </p>
         <p>
-          Aplikasi ini dirancang untuk membantu pelajar dan mahasiswa menghafal
+          Saya merancangnya untuk membantu pelajar dan mahasiswa menghafal
           materi dengan lebih efektif dan terstruktur.
         </p>
       </li>
       <li>
-        <a target="_blank" href="https://upmon.hazu.li">Upmon &#8599;</a><br />
+        <a target="_blank" href="https://upmon.hazu.li">Upmon &#8599;</a>
+        <Image
+          class="project-image"
+          src={upmonImage}
+          alt="Tampilan halaman utama Upmon"
+          width={960}
+        />
         <p>
           Aplikasi monitoring multi-region untuk memantau uptime HTTP endpoint,
           konektifitas port, masa berlaku sertifikat SSL, dan berbagai aspek
           ketersediaan layanan lainnya.
         </p>
         <p>
-          Proyek ini dikembangkan sebagai showcase aplikasi berbasis Elixir dan
-          Phoenix dengan pemanfaatan WebSocket untuk komunikasi realtime. Sistem
-          ini mencakup scheduler, checker yang berjalan di berbagai region,
-          serta pusat koordinasi yang mengatur dan menerima hasil pengecekan
-          dari setiap region secara langsung. Pendekatan ini memungkinkan proses
-          monitoring berjalan lebih terdistribusi, responsif, dan mudah
-          dipantau.
+          Saya membangunnya sebagai showcase Elixir dan Phoenix dengan WebSocket
+          untuk komunikasi realtime. Di dalamnya ada scheduler, checker di
+          berbagai region, dan pusat koordinasi yang menerima hasil pengecekan
+          secara langsung. Hasilnya, proses monitoring lebih terdistribusi,
+          responsif, dan mudah dipantau.
         </p>
       </li>
     </ul>
